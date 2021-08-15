@@ -1,0 +1,21 @@
+{
+    "labels": [
+        {
+            "id": 1,
+            "title": "Label Title"
+        }
+    ],
+    "notes": [
+        {
+            "labelID": 1,
+            "id": 1,
+            "title": "Note Title",
+            "text": "Note Text",
+            "color": "white",
+            "pin": false,
+            "archive": false,
+            "delete": false
+        }
+    ],
+    "colors": []
+}
