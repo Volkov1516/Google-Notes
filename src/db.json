@@ -13,9 +13,14 @@
             "text": "Note Text",
             "color": "white",
             "pin": false,
-            "archive": false,
-            "delete": false
+            "archive": false
         }
     ],
-    "colors": []
+    "colors": [
+        {
+            "id": 1,
+            "title": "White",
+            "code": "#FFF"
+        }
+    ]
 }
