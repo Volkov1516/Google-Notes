@@ -1,20 +1,19 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { actionCreators, State } from '../../state'
+import { useSelector, useDispatch } from "react-redux"
+import { bindActionCreators } from "redux"
+import { actionCreators } from "../../state/index"
 
 const Sidebar = () => {
-
+    
+    //Получаем данные из appReducer которые инициировали в state
+    const app = useSelector((state) => state.app)
     const dispatch = useDispatch()
-
-    const { createLabel } = bindActionCreators(actionCreators, dispatch)
-
-    const labels = useSelector((state: State) => state.app.labels)
+    
+    const { add } = bindActionCreators(actionCreators, dispatch)
 
     return (
         <div>
-            {labels.map(i => <p>{i.title}</p>)}
-            <button onClick={() => createLabel()}>Add Label</button>
+            <p>{app}</p>
+            <button onClick={() => add(1)}>Add</button>
             <ul>
                 <li>
                 <button>Notes</button>
