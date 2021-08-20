@@ -1,21 +1,27 @@
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import { Provider } from 'react-redux';
 import { store } from './state/store';
 
-import Body from './components/Body/Body';
-import Sidebar from './components/Sidebar/Sidebar';
 import Toolbar from './components/Toolbar/Toolbar';
+import Menu from './components/Menu/Menu';
+import Body from './components/Body/Body';
 
-function App() {  
+//Создать компоненту NoteCard*, которую пробрасывать в map для Заметок, Архива и всех меток. Это компонента тела заметки
+
+function App() {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
         <Provider store={store}>
           <Toolbar />
-          <Sidebar />
+          <Menu />
           <Body />
         </Provider>
-    </div>
+      </div>
+    </Router>
   );
 }
 
-ReactDOM.render( <App />, document.getElementById('root') );
+ReactDOM.render(<App />, document.getElementById('root'));
