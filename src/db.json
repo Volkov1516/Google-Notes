@@ -7,39 +7,17 @@
     {
       "id": 2,
       "title": "Label B"
-    },
-    {
-      "id": 4,
-      "title": "New Label"
     }
   ],
   "notes": [
     {
-      "labelID": 1,
+      "labelID": 2,
       "id": 1,
-      "title": "The First Note",
-      "text": "Note Text",
-      "color": "white",
+      "title": "Edited Title Twice",
+      "text": "Text inside title",
+      "color": 2,
       "pin": false,
-      "archive": false
-    },
-    {
-      "labelID": 1,
-      "id": 2,
-      "title": "The Second Note",
-      "text": "Note Text",
-      "color": "white",
-      "pin": false,
-      "archive": false
-    },
-    {
-      "labelID": 1,
-      "id": 3,
-      "title": "The Third Note",
-      "text": "Note Text",
-      "color": "white",
-      "pin": false,
-      "archive": false
+      "archive": true
     }
   ],
   "colors": [
@@ -47,6 +25,11 @@
       "id": 1,
       "title": "White",
       "code": "#FFF"
+    },
+    {
+      "id": 2,
+      "title": "Black",
+      "code": "#000"
     }
   ]
 }
