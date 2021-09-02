@@ -1,7 +1,8 @@
 const initialState = {
     notes: [],
     labels: [],
-    colors: []
+    colors: [],
+    toggleSidemenu: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 notes: action.payload
+            }
+        case 'createNote': 
+            return {
+                ...state,
+                notes: [...state.notes, action.payload]
             }
         case 'updateNote':
             return {
@@ -31,10 +37,20 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 labels: action.payload
             }
+        case 'createLabel': 
+            return {
+                ...state,
+                labels: [...state.labels, action.payload]
+            }
         case 'getColors':
             return {
                 ...state,
                 colors: action.payload
+            }
+        case 'toggleSidemenuFunc': 
+            return {
+                ...state,
+                toggleSidemenu: !state.toggleSidemenu
             }
         default:
             return state

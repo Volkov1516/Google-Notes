@@ -8,19 +8,14 @@ import List from './components/List/List';
 
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-
-//Компонента Imput - отвечает за создание новой заметки
-//Нужно добавить ей следующие функции:
-// - Добавление в Notes
-// - Выбор Label
-// - Выбор Color
-// - Выбор Pin
+import ToolBar from './components/ToolBar/ToolBar';
 
 function App() {
     return (
         <Router>
             <Box>
                 <Provider store={store}>
+                    <ToolBar />
                     <Grid container>
                         <Grid item xs={3}>
                             <SideMenu />

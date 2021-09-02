@@ -7,16 +7,20 @@
     {
       "id": 2,
       "title": "Label B"
+    },
+    {
+      "id": 3,
+      "title": "Label C"
     }
   ],
   "notes": [
     {
-      "labelID": 2,
-      "id": 1,
-      "title": "Edited Title Twice",
-      "text": "Text inside title",
+      "labelID": 3,
+      "id": 23,
+      "title": "Label B",
+      "text": "Updated text from archive",
       "color": 2,
-      "pin": false,
+      "pin": true,
       "archive": true
     }
   ],

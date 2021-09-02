@@ -10,19 +10,30 @@ import useStyles from "./stylesSideMenu"
 
 const SideMenu = () => {
     const classes = useStyles()
-    
-    const dispatch = useDispatch()
 
-    const {  } = bindActionCreators(actionCreators, dispatch)
+    const { labels, toggleSidemenu } = useSelector((state) => state.app)
+    const dispatch = useDispatch()
+    const { } = bindActionCreators(actionCreators, dispatch)
 
     return (
-        <div className={classes.wrapper}>
+        <div className={classes.wrapper} style={!toggleSidemenu ? ({ display: 'block' }) : ({ display: 'none' })}>
             <MenuList>
                 <Link to='/notes' style={{ textDecoration: 'none' }}>
                     <MenuItem className={classes.menuItem} >
                         Notes
                     </MenuItem>
                 </Link >
+                {labels.map(i => <Link to={`/label/${i.id}`} style={{ textDecoration: 'none' }}>
+                    <MenuItem className={classes.menuItem} >
+                        {i.title}
+                    </MenuItem>
+                </Link>
+                )}
+                <Link to='/editLabels' style={{ textDecoration: 'none' }}>
+                    <MenuItem className={classes.menuItem}>
+                        Edit labels
+                    </MenuItem>
+                </Link>
                 <Link to='/archive' style={{ textDecoration: 'none' }}>
                     <MenuItem className={classes.menuItem}>
                         Archive

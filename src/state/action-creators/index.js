@@ -11,6 +11,25 @@ export const getNotes = () => {
     }   
 }
 
+export const createNote = (inputTitleValue, inputTextValue) => {
+    return (dispatch) => {
+        axios.post('http://localhost:3001/notes', {
+            labelID: 1,
+            id: 33,
+            title: inputTitleValue,
+            text: inputTextValue,
+            color: 1,
+            pin: false,
+            archive: false
+        }).then((resp) => {
+            dispatch({
+                type: 'createNote',
+                payload: resp.data
+            })
+        })
+    }
+}
+
 export const updateNote = (labelID, id, inputTitleValue, inputTextValue, color, pin, archive) => {
     return (dispatch) => {
         axios.put('http://localhost:3001/notes/' + id, {
@@ -135,6 +154,20 @@ export const selectLabel = (labelID, id, inputTitleValue, inputTextValue, color,
     }
 }
 
+export const createLabel = (inputValue) => {
+    return (dispatch) => {
+        axios.post('http://localhost:3001/labels', {
+            id: 3,
+            title: inputValue
+        }).then((resp) => {
+            dispatch({
+                type: 'createLabel',
+                payload: resp.data
+            })
+        })
+    }
+}
+
 //COLORS
 export const getColors = () => {
     return (dispatch) => {
@@ -164,6 +197,14 @@ export const selectColor = (labelID, id, inputTitleValue, inputTextValue, color,
                     payload: resp.data
                 })
             })
+        })
+    }
+}
+
+export const toggleSidemenuFunc = () => {
+    return (dispatch) => {
+        dispatch({
+            type: 'toggleSidemenuFunc'
         })
     }
 }
