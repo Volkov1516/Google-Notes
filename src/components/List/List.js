@@ -1,4 +1,4 @@
-import { Container } from '@material-ui/core'
+import { Container, Grid } from '@material-ui/core'
 import React from 'react'
 import { Link, Switch, Route } from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux"
@@ -12,6 +12,7 @@ const List = () => {
     const labels = useSelector((state) => state.app.labels)
 
     return (
+        <Grid item xs={9}>
         <Container maxWidth="sm">
             <Switch>
                 <Route path='/notes'>
@@ -29,6 +30,7 @@ const List = () => {
                 </Route>
             </Switch>
         </Container>
+        </Grid>
     )
 }
 

@@ -3,9 +3,11 @@ import { useDispatch } from 'react-redux'
 import { bindActionCreators } from "redux"
 import { actionCreators } from '../../../../state'
 
-import { Button, InputBase, Paper } from '@material-ui/core'
+import useStyles from './stylesInput'
+import { Button, InputBase, Paper, Toolbar, AppBar } from '@material-ui/core'
 
 const Input = () => {
+    const classes = useStyles()
 
     const dispatch = useDispatch()
     const { createNote } = bindActionCreators(actionCreators, dispatch)
@@ -17,15 +19,15 @@ const Input = () => {
     return (
         <div>
             {!enableEdit ? (
-                <Paper onClick={() => setEnableEdit(!enableEdit)}>
+                <Paper onClick={() => setEnableEdit(!enableEdit)} className={classes.closedPaper} elevation="4" >
                     <InputBase
-                        placeholder="Take a note"
+                        placeholder="Take a note..."
                         fullWidth
                         autoFocus="true"
                     />
                 </Paper>
             ) : (
-                <Paper>
+                <Paper className={classes.closedPaper} elevation="4" >
                     <InputBase
                         placeholder="Title"
                         value={inputTitleValue}
@@ -41,12 +43,14 @@ const Input = () => {
                         fullWidth
                         multiline
                     />
-                    <Button onClick={() => {
-                        createNote(inputTitleValue, inputTextValue)
-                        setEnableEdit(!enableEdit)
-                    }}>
-                        Close
-                    </Button>
+                    <Paper className={classes.bottomPaper} elevation="0" >
+                        <Button onClick={() => {
+                            createNote(inputTitleValue, inputTextValue)
+                            setEnableEdit(!enableEdit)
+                        }} className={classes.closeBtn} size="medium" >
+                            Close
+                        </Button>
+                    </Paper>
                 </Paper>
             )}
         </div>

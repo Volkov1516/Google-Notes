@@ -6,6 +6,7 @@ import { store } from './state/store';
 import SideMenu from './components/SideMenu/SideMenu';
 import List from './components/List/List';
 
+import './App.css';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import ToolBar from './components/ToolBar/ToolBar';
@@ -17,12 +18,8 @@ function App() {
                 <Provider store={store}>
                     <ToolBar />
                     <Grid container>
-                        <Grid item xs={3}>
                             <SideMenu />
-                        </Grid>
-                        <Grid item xs={9}>
                             <List />
-                        </Grid>
                     </Grid>
                 </Provider>
             </Box>
