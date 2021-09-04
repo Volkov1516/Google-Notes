@@ -1,3 +1,4 @@
+import { Container, Grid } from '@material-ui/core'
 import React, { useEffect } from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
@@ -26,12 +27,16 @@ const Notes = () => {
     }, [])
 
     return (
-        <div>
+        <Container>
             <Input />
-            {notes.map((i) => { if(i.archive) return <div key={i.id}>
-                <NoteItem labelID={i.labelID} id={i.id} title={i.title} text={i.text} color={i.color} pin={i.pin} archive={i.archive} labels={labels} colors={colors} />
-            </div>})}
-        </div>
+            <Grid container >
+                    {notes.map((i) => {
+                        if (i.archive) return <Grid key={i.id} item xs={12} md={6} lg={3} >
+                            <NoteItem labelID={i.labelID} id={i.id} title={i.title} text={i.text} color={i.color} pin={i.pin} archive={i.archive} labels={labels} colors={colors} />
+                        </Grid>
+                    })}
+            </Grid>
+        </Container>
     )
 }
 

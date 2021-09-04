@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
         borderShadow: "none",
         borderRadius: "11px",
         padding: "15px",
+        margin: "3px",
         marginBottom: "10px",
         maxHeight: "400px",
         overflow: "hidden",

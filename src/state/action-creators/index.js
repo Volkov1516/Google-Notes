@@ -15,7 +15,7 @@ export const createNote = (inputTitleValue, inputTextValue) => {
     return (dispatch) => {
         axios.post('http://localhost:3001/notes', {
             labelID: 1,
-            id: 33,
+            id: 13223,
             title: inputTitleValue,
             text: inputTextValue,
             color: 1,

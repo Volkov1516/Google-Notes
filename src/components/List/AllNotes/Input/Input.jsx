@@ -4,7 +4,7 @@ import { bindActionCreators } from "redux"
 import { actionCreators } from '../../../../state'
 
 import useStyles from './stylesInput'
-import { Button, InputBase, Paper, Toolbar, AppBar } from '@material-ui/core'
+import { Button, InputBase, Paper } from '@material-ui/core'
 
 const Input = () => {
     const classes = useStyles()

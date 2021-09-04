@@ -13,7 +13,6 @@ const List = () => {
 
     return (
         <Grid item xs={9}>
-        <Container maxWidth="sm">
             <Switch>
                 <Route path='/notes'>
                     <AllNotes />
@@ -29,7 +28,6 @@ const List = () => {
                     <Archive />
                 </Route>
             </Switch>
-        </Container>
         </Grid>
     )
 }

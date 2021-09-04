@@ -4,7 +4,7 @@ import { bindActionCreators } from "redux"
 import { actionCreators } from '../../../../state'
 
 import useStyles from './stylesNoteItem'
-import { Button, Paper, Typography, InputBase, IconButton } from '@material-ui/core'
+import { Button, Paper, Typography, InputBase, IconButton, Grid } from '@material-ui/core'
 import ArchiveOutlinedIcon from '@material-ui/icons/ArchiveOutlined';
 import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
 import ColorLensOutlinedIcon from '@material-ui/icons/ColorLensOutlined';
@@ -21,7 +21,7 @@ const NoteItem = ({ labelID, id, title, text, color, pin, archive, labels, color
     const [inputTextValue, setInputTextValue] = useState(text)
 
     return (
-        <div>
+        <>
             {!enableEdit ? (
                 <Paper onClick={() => setEnableEdit(!enableEdit)} className={classes.paperClosed} elevation="0" >
                     <Typography className={classes.title} >{title}</Typography>
@@ -53,40 +53,40 @@ const NoteItem = ({ labelID, id, title, text, color, pin, archive, labels, color
                     />
                     <Paper className={classes.bottomPaper} elevation="0">
                         <div>
-                        {/* {labels.map(i => <Button onClick={() => selectLabel(i.id, id, inputTitleValue, inputTextValue, color, pin, archive)} >
+                            {/* {labels.map(i => <Button onClick={() => selectLabel(i.id, id, inputTitleValue, inputTextValue, color, pin, archive)} >
                             {i.title}
                         </Button>)} */}
-                        <IconButton >
-                            <LabelOutlinedIcon fontSize="small" />
-                        </IconButton>
+                            <IconButton >
+                                <LabelOutlinedIcon fontSize="small" />
+                            </IconButton>
 
-                        {/* {colors.map(i => <Button onClick={() => selectColor(labelID, id, inputTitleValue, inputTextValue, i.id, pin, archive)} >
+                            {/* {colors.map(i => <Button onClick={() => selectColor(labelID, id, inputTitleValue, inputTextValue, i.id, pin, archive)} >
                             {i.title}
                         </Button>)} */}
-                        <IconButton>
-                            <ColorLensOutlinedIcon fontSize="small" />
-                        </IconButton>
+                            <IconButton>
+                                <ColorLensOutlinedIcon fontSize="small" />
+                            </IconButton>
 
-                        <IconButton onClick={() => { archiveNote(labelID, id, inputTitleValue, inputTextValue, color, pin, archive) }}>
-                            <ArchiveOutlinedIcon fontSize="small" />
-                        </IconButton>
+                            <IconButton onClick={() => { archiveNote(labelID, id, inputTitleValue, inputTextValue, color, pin, archive) }}>
+                                <ArchiveOutlinedIcon fontSize="small" />
+                            </IconButton>
 
-                        <IconButton onClick={() => { deleteNote(id) }}>
-                            <DeleteForeverOutlinedIcon fontSize="small" />
-                        </IconButton>
+                            <IconButton onClick={() => { deleteNote(id) }}>
+                                <DeleteForeverOutlinedIcon fontSize="small" />
+                            </IconButton>
                         </div>
                         <div>
-                        <Button onClick={() => {
-                            updateNote(labelID, id, inputTitleValue, inputTextValue, color, pin, archive)
-                            setEnableEdit(!enableEdit)
-                        }} className={classes.menuBtn} >
-                            Close
-                        </Button>
+                            <Button onClick={() => {
+                                updateNote(labelID, id, inputTitleValue, inputTextValue, color, pin, archive)
+                                setEnableEdit(!enableEdit)
+                            }} className={classes.menuBtn} >
+                                Close
+                            </Button>
                         </div>
                     </Paper>
                 </Paper>
             )}
-        </div>
+        </>
     )
 }
 
