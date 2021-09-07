@@ -9,26 +9,46 @@ import EditLabels from './EditLabels/EditLabels'
 
 const List = () => {
 
-    const labels = useSelector((state) => state.app.labels)
+    const { labels, toggleSidemenu } = useSelector((state) => state.app)
 
     return (
-        <Grid item xs={9}>
-            <Switch>
-                <Route path='/notes'>
-                    <AllNotes />
-                </Route>
-                {labels.map(i => <Route path={`/label/${i.id}`} style={{ textDecoration: 'none' }}>
-                    <Label id={i.id} />
-                </Route>
-                )}
-                <Route path='/editLabels'>
-                    <EditLabels />
-                </Route>
-                <Route path='/archive'>
-                    <Archive />
-                </Route>
-            </Switch>
-        </Grid>
+        <>
+            {!toggleSidemenu ? (<Grid item xs={9} alignItems="center" >
+                <Switch>
+                    <Route path='/notes'>
+                        <AllNotes />
+                    </Route>
+                    {labels.map(i => <Route path={`/label/${i.id}`} style={{ textDecoration: 'none' }}>
+                        <Label id={i.id} />
+                    </Route>
+                    )}
+                    <Route path='/editLabels'>
+                        <EditLabels />
+                    </Route>
+                    <Route path='/archive'>
+                        <Archive />
+                    </Route>
+                </Switch>
+            </Grid>) : (
+                <Grid item xs={11} alignItems="center" >
+                    <Switch>
+                        <Route path='/notes'>
+                            <AllNotes />
+                        </Route>
+                        {labels.map(i => <Route path={`/label/${i.id}`} style={{ textDecoration: 'none' }}>
+                            <Label id={i.id} />
+                        </Route>
+                        )}
+                        <Route path='/editLabels'>
+                            <EditLabels />
+                        </Route>
+                        <Route path='/archive'>
+                            <Archive />
+                        </Route>
+                    </Switch>
+                </Grid>
+            )}
+        </>
     )
 }
 

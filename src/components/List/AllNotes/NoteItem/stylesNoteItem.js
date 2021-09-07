@@ -6,18 +6,23 @@ const useStyles = makeStyles((theme) => ({
         borderShadow: "none",
         borderRadius: "11px",
         padding: "15px",
-        margin: "3px",
         marginBottom: "10px",
         maxHeight: "400px",
         overflow: "hidden",
-        backgroundColor: "#f28b82"
+        textOverflow: 'ellipsis !important'
     },
     paperOpenned: {
         border: "1px solid lightGray",
         borderShadow: "none",
         borderRadius: "11px",
         padding: "15px",
-        backgroundColor: "#f28b82"
+        position: 'fixed',
+        zIndex: "1000",
+        bottom: '30px',
+        top: '30px',
+        left: "28%",
+        right: "28%",
+        width: '600px'
     },
     title: {
         fontWeight: "500",
@@ -30,7 +35,12 @@ const useStyles = makeStyles((theme) => ({
         border: "none",
         display: "flex",
         justifyContent: "space-between",
-        backgroundColor: "#f28b82"
+        position: 'absolute',
+        bottom: '10px'
+    },
+    closeBtn: {
+        position: 'absolute',
+        left: '500px'
     }
 }))
 

@@ -2,7 +2,8 @@ const initialState = {
     notes: [],
     labels: [],
     colors: [],
-    toggleSidemenu: false
+    toggleSidemenu: false,
+    toggleGrid: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -42,6 +43,16 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 labels: [...state.labels, action.payload]
             }
+        case 'updateLabel':
+            return {
+                ...state,
+                labels: [...state.labels, action.payload]
+            }
+        case 'deleteLabel':
+            return {
+                ...state,
+                nlabels: [...state.labels, action.payload]
+            }
         case 'getColors':
             return {
                 ...state,
@@ -51,6 +62,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 toggleSidemenu: !state.toggleSidemenu
+            }
+        case 'toggleGridFunc': 
+            return {
+                ...state,
+                toggleGrid: !state.toggleGrid
             }
         default:
             return state

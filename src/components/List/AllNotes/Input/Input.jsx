@@ -4,7 +4,7 @@ import { bindActionCreators } from "redux"
 import { actionCreators } from '../../../../state'
 
 import useStyles from './stylesInput'
-import { Button, InputBase, Paper } from '@material-ui/core'
+import { Button, InputBase, Paper, Container } from '@material-ui/core'
 
 const Input = () => {
     const classes = useStyles()
@@ -17,9 +17,9 @@ const Input = () => {
     const [inputTextValue, setInputTextValue] = useState('')
 
     return (
-        <div>
+        <Container align="center" >
             {!enableEdit ? (
-                <Paper onClick={() => setEnableEdit(!enableEdit)} className={classes.closedPaper} elevation="4" >
+                <Paper onClick={() => setEnableEdit(!enableEdit)} className={classes.closedPaper} elevation="6" alignItems="center" >
                     <InputBase
                         placeholder="Take a note..."
                         fullWidth
@@ -27,7 +27,7 @@ const Input = () => {
                     />
                 </Paper>
             ) : (
-                <Paper className={classes.closedPaper} elevation="4" >
+                <Paper className={classes.closedPaper} elevation="6" alignItems="center"  >
                     <InputBase
                         placeholder="Title"
                         value={inputTitleValue}
@@ -53,7 +53,7 @@ const Input = () => {
                     </Paper>
                 </Paper>
             )}
-        </div>
+        </Container>
     )
 }
 

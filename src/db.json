@@ -2,24 +2,20 @@
   "labels": [
     {
       "id": 1,
-      "title": "Label A"
-    },
-    {
-      "id": 2,
-      "title": "Label B"
+      "title": "Favorites"
     },
     {
       "id": 3,
-      "title": "Label C"
+      "title": "Secondary"
     }
   ],
   "notes": [
     {
-      "labelID": 1,
+      "labelID": 3,
       "id": 23,
       "title": "CONCENTRATION",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\n\n\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"",
-      "color": 1,
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\n\n\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat volup",
+      "color": 9,
       "pin": true,
       "archive": true
     },
@@ -28,16 +24,7 @@
       "id": 33,
       "title": "LOREM",
       "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"",
-      "color": 1,
-      "pin": false,
-      "archive": true
-    },
-    {
-      "labelID": 1,
-      "id": 13,
-      "title": "asd",
-      "text": "wqweqew",
-      "color": 1,
+      "color": 2,
       "pin": false,
       "archive": true
     },
@@ -46,7 +33,7 @@
       "id": 1323,
       "title": "213",
       "text": "asdasdasd",
-      "color": 1,
+      "color": 8,
       "pin": false,
       "archive": true
     },
@@ -55,7 +42,7 @@
       "id": 13223,
       "title": "12",
       "text": "sadsadsad",
-      "color": 1,
+      "color": 12,
       "pin": false,
       "archive": true
     }
@@ -64,12 +51,62 @@
     {
       "id": 1,
       "title": "White",
-      "code": "#FFF"
+      "code": "#FFFFFF"
     },
     {
       "id": 2,
-      "title": "Black",
-      "code": "#000"
+      "title": "Red",
+      "code": "#F28B82"
+    },
+    {
+      "id": 3,
+      "title": "Orange",
+      "code": "#FBBC04"
+    },
+    {
+      "id": 4,
+      "title": "Yellow",
+      "code": "#FFF475"
+    },
+    {
+      "id": 5,
+      "title": "Green",
+      "code": "#CCFF90"
+    },
+    {
+      "id": 6,
+      "title": "Teal",
+      "code": "#A7FFEB"
+    },
+    {
+      "id": 7,
+      "title": "Blue",
+      "code": "#CBf0F8"
+    },
+    {
+      "id": 8,
+      "title": "Dark blue",
+      "code": "#AECBFA"
+    },
+    {
+      "id": 9,
+      "title": "Ourple",
+      "code": "#D7AEFB"
+    },
+    {
+      "id": 10,
+      "title": "Pink",
+      "code": "#FDCFE8"
+    },
+    {
+      "id": 11,
+      "title": "Brown",
+      "code": "#E6C9A8"
+    },
+    {
+      "id": 12,
+      "title": "Gray",
+      "code": "#E8EAED"
     }
   ]
 }

@@ -168,6 +168,45 @@ export const createLabel = (inputValue) => {
     }
 }
 
+export const updateLabel = (id, inputValue) => {
+    return (dispatch) => {
+        axios.put('http://localhost:3001/labels/' + id, {
+            id,
+            title: inputValue
+        }).then((resp) => {
+            dispatch({
+                type: 'updateLabel',
+                payload: resp.data
+            })
+        }).then((resp) => {
+            axios.get('http://localhost:3001/labels').then((resp) => {
+                dispatch({
+                    type: 'getLabels',
+                    payload: resp.data
+                })
+            })
+        })
+    }
+}
+
+export const deleteLabel = (id) => {
+    return(dispatch) => {
+        axios.delete('http://localhost:3001/labels/' + id).then((resp) => {
+            dispatch({
+                type: 'deleteLabel',
+                payload: resp.data
+            })
+        }).then((resp) => {
+            axios.get('http://localhost:3001/labels').then((resp) => {
+                dispatch({
+                    type: 'getLabels',
+                    payload: resp.data
+                })
+            })
+        })
+    }
+}
+
 //COLORS
 export const getColors = () => {
     return (dispatch) => {
@@ -205,6 +244,14 @@ export const toggleSidemenuFunc = () => {
     return (dispatch) => {
         dispatch({
             type: 'toggleSidemenuFunc'
+        })
+    }
+}
+
+export const toggleGridFunc = () => {
+    return(dispatch) => {
+        dispatch({
+            type: 'toggleGridFunc'
         })
     }
 }

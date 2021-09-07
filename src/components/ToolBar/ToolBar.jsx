@@ -14,7 +14,7 @@ const ToolBar = () => {
     const classes = useStyles()
 
     const dispatch = useDispatch()
-    const { toggleSidemenuFunc } = bindActionCreators(actionCreators, dispatch)
+    const { toggleSidemenuFunc, toggleGridFunc } = bindActionCreators(actionCreators, dispatch)
 
     return (
         <AppBar className={classes.root} position="static" >
@@ -32,7 +32,7 @@ const ToolBar = () => {
                         </IconButton>
                     }
                 />
-                <IconButton className={classes.icon} >
+                <IconButton onClick={() => toggleGridFunc()} className={classes.icon} >
                     <ViewAgendaOutlinedIcon />
                 </IconButton>
             </Toolbar>
