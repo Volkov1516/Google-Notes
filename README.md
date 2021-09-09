@@ -6,7 +6,7 @@ Google like note application.
 ## Features 
 - React Hooks
 - Global state with Redux
-- HTTP requests with axios
+- HTTP requests with axios and JSON server
 - Routing with React Router
 - Search with Fuse.js
 - Material UI
