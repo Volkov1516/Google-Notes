@@ -1,7 +1,8 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../../state'
+import Fuse from 'fuse.js'
 
 import { AppBar, Button, IconButton, InputBase, Toolbar } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu';
@@ -13,8 +14,15 @@ import useStyles from './stylesToolbar'
 const ToolBar = () => {
     const classes = useStyles()
 
+    const {notes, labels, colors} = useSelector((state) => state.app)
     const dispatch = useDispatch()
     const { toggleSidemenuFunc, toggleGridFunc } = bindActionCreators(actionCreators, dispatch)
+
+    const fuse = new Fuse(notes, {
+        keys: ['title']
+    })
+
+    console.log(fuse.search('con')[0])
 
     return (
         <AppBar className={classes.root} position="static" >
