@@ -17,7 +17,12 @@ const useStyles = makeStyles((theme) => ({
         height: "54px",
         borderRadius: "13px"
     },
-    icon: {
+    title: {
+      flexGrow: 1,
+      color: "gray",
+      fontSize: "22px",
+      fontWeight: '400',
+      paddingLeft: '10px'
     }
 }))
 

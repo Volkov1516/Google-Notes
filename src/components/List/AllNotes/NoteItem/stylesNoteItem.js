@@ -18,10 +18,8 @@ const useStyles = makeStyles((theme) => ({
         padding: "15px",
         position: 'fixed',
         zIndex: "1000",
-        bottom: '30px',
-        top: '30px',
-        left: "28%",
-        right: "28%",
+        bottom: '40px',
+        top: '40px',
         width: '600px'
     },
     title: {

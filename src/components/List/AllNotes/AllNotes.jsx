@@ -1,4 +1,4 @@
-import { Container, Grid } from '@material-ui/core'
+import { Container, Dialog, Grid } from '@material-ui/core'
 import React, { useState, useEffect } from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
@@ -38,7 +38,7 @@ const Notes = () => {
                     ) : (<>
                         {notes.map((i) => {
                             if (i.archive) return <Grid key={i.id} item xs={8} style={{margin: "0 auto"}} >
-                                <NoteItem labelID={i.labelID} id={i.id} title={i.title} text={i.text} color={i.color} pin={i.pin} archive={i.archive} labels={labels} colors={colors} />
+                                <NoteItem labelID={i.labelID} id={i.id} title={i.title} text={i.text} color={i.color} pin={i.pin} archive={i.archive} labels={labels} colors={colors}/>
                             </Grid>
                         })}
                         </>)}

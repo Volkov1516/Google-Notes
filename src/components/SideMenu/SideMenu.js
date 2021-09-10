@@ -1,3 +1,4 @@
+import React, {useState} from 'react'
 import { Link } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { bindActionCreators } from "redux"
@@ -17,13 +18,15 @@ const SideMenu = () => {
     const dispatch = useDispatch()
     const { } = bindActionCreators(actionCreators, dispatch)
 
+    const currentLocation = window.location.pathname
+
     return (
         <>
             {!toggleSidemenu ? (
                 <Grid item xs={3} className={classes.wrapper}>
                     <MenuList>
                         <Link to='/notes' style={{ textDecoration: 'none' }}>
-                            <MenuItem className={classes.menuItem} >
+                            <MenuItem className={classes.menuItem} style={currentLocation === '/notes' ? ({backgroundColor: '#FEEFC3'}) : (null)} >
                                 <IconButton className={classes.longMenuItem} >
                                     <EmojiObjectsOutlinedIcon />
                                 </IconButton>
@@ -31,7 +34,7 @@ const SideMenu = () => {
                             </MenuItem>
                         </Link >
                         {labels.map(i => <Link to={`/label/${i.id}`} style={{ textDecoration: 'none' }}>
-                            <MenuItem className={classes.menuItem} >
+                            <MenuItem className={classes.menuItem} style={currentLocation === `/label/${i.id}` ? ({backgroundColor: '#FEEFC3'}) : (null)}>
                                 <IconButton className={classes.longMenuItem}>
                                     <LabelOutlinedIcon />
                                 </IconButton>
@@ -40,7 +43,7 @@ const SideMenu = () => {
                         </Link>
                         )}
                         <Link to='/editLabels' style={{ textDecoration: 'none' }}>
-                            <MenuItem className={classes.menuItem}>
+                            <MenuItem className={classes.menuItem} style={currentLocation === '/editLabels' ? ({backgroundColor: '#FEEFC3'}) : (null)}>
                                 <IconButton className={classes.longMenuItem}>
                                     <EditOutlinedIcon />
                                 </IconButton>
@@ -48,7 +51,7 @@ const SideMenu = () => {
                             </MenuItem>
                         </Link>
                         <Link to='/archive' style={{ textDecoration: 'none' }}>
-                            <MenuItem className={classes.menuItem}>
+                            <MenuItem className={classes.menuItem} style={currentLocation === '/archive' ? ({backgroundColor: '#FEEFC3'}) : (null)}>
                                 <IconButton className={classes.longMenuItem}>
                                     <ArchiveOutlinedIcon />
                                 </IconButton>
@@ -60,16 +63,16 @@ const SideMenu = () => {
             ) : (
                 <Grid item xs={1} className={classes.wrapper}>
                     <MenuList>
-                        <Link to='/notes' style={{ textDecoration: 'none' }}>
+                        <Link to='/notes' style={{ textDecoration: 'none' }} >
                             <MenuItem className={classes.menuItemShort} >
-                                <IconButton >
+                                <IconButton style={currentLocation === '/notes' ? ({backgroundColor: '#FEEFC3'}) : (null)}>
                                     <EmojiObjectsOutlinedIcon />
                                 </IconButton>
                             </MenuItem>
                         </Link >
                         {labels.map(i => <Link to={`/label/${i.id}`} style={{ textDecoration: 'none' }}>
-                            <MenuItem className={classes.menuItemShort} >
-                                <IconButton >
+                            <MenuItem className={classes.menuItemShort}>
+                                <IconButton style={currentLocation === `/label/${i.id}` ? ({backgroundColor: '#FEEFC3'}) : (null)}>
                                     <LabelOutlinedIcon />
                                 </IconButton>
                             </MenuItem>
@@ -77,14 +80,14 @@ const SideMenu = () => {
                         )}
                         <Link to='/editLabels' style={{ textDecoration: 'none' }}>
                             <MenuItem className={classes.menuItemShort}>
-                                <IconButton >
+                                <IconButton style={currentLocation === '/editLabels' ? ({backgroundColor: '#FEEFC3'}) : (null)}>
                                     <EditOutlinedIcon />
                                 </IconButton>
                             </MenuItem>
                         </Link>
                         <Link to='/archive' style={{ textDecoration: 'none' }}>
                             <MenuItem className={classes.menuItemShort}>
-                                <IconButton >
+                                <IconButton style={currentLocation === '/archive' ? ({backgroundColor: '#FEEFC3'}) : (null)}>
                                     <ArchiveOutlinedIcon />
                                 </IconButton>
                             </MenuItem>

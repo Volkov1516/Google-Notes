@@ -1,6 +1,6 @@
 import { Container, Grid } from '@material-ui/core'
 import React from 'react'
-import { Link, Switch, Route } from 'react-router-dom'
+import { Link, Switch, Route, Redirect } from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux"
 import AllNotes from './AllNotes/AllNotes'
 import Archive from './Archive/Archive'
@@ -16,6 +16,9 @@ const List = () => {
         <>
             {!toggleSidemenu ? (<Grid item xs={9} alignItems="center" >
                 <Switch>
+                    <Route exact path="/">
+                        <Redirect to="/notes" />
+                    </Route>
                     <Route path='/notes'>
                         <AllNotes />
                     </Route>

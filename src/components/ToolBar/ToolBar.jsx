@@ -1,12 +1,13 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../../state'
 import Fuse from 'fuse.js'
 
-import { AppBar, Button, IconButton, InputBase, Toolbar } from '@material-ui/core'
+import { AppBar, Button, IconButton, InputBase, Toolbar, Tooltip, Typography, Box } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu';
 import ViewAgendaOutlinedIcon from '@material-ui/icons/ViewAgendaOutlined';
+import DashboardOutlinedIcon from '@material-ui/icons/DashboardOutlined';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 
 import useStyles from './stylesToolbar'
@@ -25,33 +26,58 @@ const ToolBar = () => {
 
     const [inputValue, setInputValue] = useState('')
 
+    const [viewIcon, setViewIcon] = useState(false)
+
     return (
         <AppBar className={classes.root} position="static" >
             <Toolbar className={classes.rootTolbar} >
-                <IconButton onClick={() => toggleSidemenuFunc()} className={classes.icon} edge="start" >
-                    <MenuIcon />
-                </IconButton>
+                <Tooltip title="Main menu">
+                    <IconButton onClick={() => toggleSidemenuFunc()} className={classes.icon} edge="start" >
+                        <MenuIcon />
+                    </IconButton>
+                </Tooltip>
 
-                <Link to="/search" style={{ textDecoration: 'none' }}>
-                    <InputBase
-                        value={inputValue}
-                        onChange={(e) => {
-                            setInputValue(e.target.value)
-                            catchSearchValue(inputValue)
-                        }}
-                        className={classes.searchInput}
-                        placeholder="Search"
-                        fullWidth
-                        startAdornment={
-                            <IconButton>
-                                <SearchOutlinedIcon />
-                            </IconButton>
-                        }
-                    />
-                </Link>
-                <IconButton onClick={() => toggleGridFunc()} className={classes.icon} >
-                    <ViewAgendaOutlinedIcon />
-                </IconButton>
+
+                <Typography className={classes.title}>
+                    Keep
+                </Typography>
+
+
+                <InputBase
+                    value={inputValue}
+                    onChange={(e) => {
+                        setInputValue(e.target.value)
+                        catchSearchValue(inputValue)
+                    }}
+                    className={classes.searchInput}
+                    placeholder="Search"
+                    fullWidth
+                    startAdornment={
+                        <Link to="/search" style={{ textDecoration: 'none' }}>
+                            <Tooltip title="Search">
+                                <IconButton>
+                                    <SearchOutlinedIcon />
+                                </IconButton>
+                            </Tooltip>
+                        </Link>
+                    }
+                />
+
+                {viewIcon ? (<Tooltip title="List view">
+                    <IconButton onClick={() => {
+                        toggleGridFunc()
+                        setViewIcon(!viewIcon)
+                    }} className={classes.icon} >
+                        <ViewAgendaOutlinedIcon />
+                    </IconButton>
+                </Tooltip>) : (<Tooltip title="Grid view">
+                    <IconButton onClick={() => {
+                        toggleGridFunc()
+                        setViewIcon(!viewIcon)
+                    }} className={classes.icon} >
+                        <DashboardOutlinedIcon />
+                    </IconButton>
+                </Tooltip>)}
             </Toolbar>
         </AppBar>
     )
