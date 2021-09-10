@@ -6,6 +6,7 @@ import AllNotes from './AllNotes/AllNotes'
 import Archive from './Archive/Archive'
 import Label from './Label/Label'
 import EditLabels from './EditLabels/EditLabels'
+import Search from './Search/Search'
 
 const List = () => {
 
@@ -28,6 +29,9 @@ const List = () => {
                     <Route path='/archive'>
                         <Archive />
                     </Route>
+                    <Route path='/search' >
+                        <Search />
+                    </Route>
                 </Switch>
             </Grid>) : (
                 <Grid item xs={11} alignItems="center" >
@@ -44,6 +48,9 @@ const List = () => {
                         </Route>
                         <Route path='/archive'>
                             <Archive />
+                        </Route>
+                        <Route path='/search' >
+                            <Search />
                         </Route>
                     </Switch>
                 </Grid>

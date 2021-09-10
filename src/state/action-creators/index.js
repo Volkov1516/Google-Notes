@@ -255,3 +255,12 @@ export const toggleGridFunc = () => {
         })
     }
 }
+
+export const catchSearchValue = (inputValue) => {
+    return(dispatch) => {
+        dispatch({
+            type: 'catchSearchValue',
+            payload: inputValue
+        })
+    }
+}

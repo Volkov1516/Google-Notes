@@ -3,7 +3,8 @@ const initialState = {
     labels: [],
     colors: [],
     toggleSidemenu: false,
-    toggleGrid: false
+    toggleGrid: false,
+    searchValue: ''
 }
 
 const reducer = (state = initialState, action) => {
@@ -67,6 +68,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 toggleGrid: !state.toggleGrid
+            }
+        case 'catchSearchValue': 
+            return {
+                ...state,
+                searchValue: action.payload
             }
         default:
             return state
