@@ -7,9 +7,9 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "11px",
         padding: "15px",
         marginBottom: "10px",
-        maxHeight: "400px",
         overflow: "hidden",
-        textOverflow: 'ellipsis !important'
+        textOverflow: 'ellipsis !important',
+        whiteSpace: 'wrap'
     },
     paperOpenned: {
         border: "1px solid lightGray",

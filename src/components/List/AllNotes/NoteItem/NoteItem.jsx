@@ -4,7 +4,7 @@ import { bindActionCreators } from "redux"
 import { actionCreators } from '../../../../state'
 
 import useStyles from './stylesNoteItem'
-import { Button, Paper, Typography, InputBase, IconButton, Grid, Container, Box, MenuItem, Dialog, Tooltip } from '@material-ui/core'
+import { Button, Paper, Typography, InputBase, IconButton, Grid, Container, Box, MenuItem, Dialog, Tooltip, Popover } from '@material-ui/core'
 import ArchiveOutlinedIcon from '@material-ui/icons/ArchiveOutlined';
 import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
 import ColorLensOutlinedIcon from '@material-ui/icons/ColorLensOutlined';
@@ -39,11 +39,14 @@ const NoteItem = ({ labelID, id, title, text, color, pin, archive, labels, color
 
 
     return (
-        <Container  >
+        <Container >
             {!enableEdit ? (
                 <Paper onClick={() => setEnableEdit(!enableEdit)} className={classes.paperClosed} elevation="0" style={{ backgroundColor: noteColor }}>
-                    <Typography className={classes.title} >{title}</Typography>
-                    <Typography noWrap >{text}</Typography>
+                    <Typography noWrap className={classes.title} >{title}</Typography>
+                    <div className='boxClosed'>
+                        <Typography >{text}</Typography>
+                        {/* <InputBase value={text} fullWidth multiline /> */}
+                    </div>
                 </Paper>
             ) : (
                 <Dialog open="true" fullWidth maxWidth="sm" >
@@ -72,7 +75,7 @@ const NoteItem = ({ labelID, id, title, text, color, pin, archive, labels, color
                             autoFocus="true"
                             className={classes.text}
                         />
-                        <Paper className={classes.bottomPaper} elevation="0" style={{ backgroundColor: noteColor }}>
+                        <Paper className={classes.bottomPaper} elevation="0" style={{ backgroundColor: noteColor }} >
                             <div>
                                 <Paper style={!toggleLanelsMenu ? ({ display: 'none' }) : ({ display: 'block' })}>
                                     {labels.map(i => <MenuItem onClick={() => selectLabel(i.id, id, inputTitleValue, inputTextValue, color, pin, archive)} >
