@@ -67,42 +67,44 @@ const NoteItem = ({ labelID, id, title, text, color, pin, archive, labels, color
                                 </Tooltip>
                             }
                         />
-                        <InputBase
-                            value={inputTextValue}
-                            onChange={e => setInputTextValue(e.target.value)}
-                            fullWidth
-                            multiline
-                            autoFocus="true"
-                            className={classes.text}
-                        />
+                        <Box className="boxOpenned">
+                            <InputBase 
+                                value={inputTextValue}
+                                onChange={e => setInputTextValue(e.target.value)}
+                                fullWidth
+                                multiline
+                                autoFocus="true"
+                                className={classes.text}
+                            />
+                        </Box>
                         <Paper className={classes.bottomPaper} elevation="0" style={{ backgroundColor: noteColor }} >
                             <div>
-                                <Paper style={!toggleLanelsMenu ? ({ display: 'none' }) : ({ display: 'block' })}>
+                                <Paper style={!toggleLanelsMenu ? ({ display: 'none' }) : ({ display: 'block' })} className={classes.listsPopup} elevation="8" >
                                     {labels.map(i => <MenuItem onClick={() => selectLabel(i.id, id, inputTitleValue, inputTextValue, color, pin, archive)} >
                                         {i.title}
                                     </MenuItem>)}
                                 </Paper>
-                                <Tooltip title="Change label">
+                                <Tooltip title="Change label" placement="bottom">
                                     <IconButton onClick={() => setToggleLabelsMenu(!toggleLanelsMenu)} >
                                         <LabelOutlinedIcon fontSize="small" />
                                     </IconButton>
                                 </Tooltip>
-                                <Paper style={!toggleColorsMenu ? ({ display: 'none' }) : ({ display: 'block' })}>
+                                <Paper style={!toggleColorsMenu ? ({ display: 'none' }) : ({ display: 'block' })} className={classes.listsPopup} elevation="8" >
                                     {colors.map(i => <MenuItem onClick={() => selectColor(labelID, id, inputTitleValue, inputTextValue, i.id, pin, archive)} >
                                         {i.title}
                                     </MenuItem>)}
                                 </Paper>
-                                <Tooltip title="Change color">
+                                <Tooltip title="Change color" placement="bottom">
                                     <IconButton onClick={() => setToggleColorsMenu(!toggleColorsMenu)}>
                                         <ColorLensOutlinedIcon fontSize="small" />
                                     </IconButton>
                                 </Tooltip>
-                                <Tooltip title="Archive">
+                                <Tooltip title="Archive" placement="bottom">
                                     <IconButton onClick={() => { archiveNote(labelID, id, inputTitleValue, inputTextValue, color, pin, archive) }}>
                                         <ArchiveOutlinedIcon fontSize="small" />
                                     </IconButton>
                                 </Tooltip>
-                                <Tooltip title="Delete">
+                                <Tooltip title="Delete" placement="bottom" >
                                     <IconButton onClick={() => { deleteNote(id) }}>
                                         <DeleteForeverOutlinedIcon fontSize="small" />
                                     </IconButton>

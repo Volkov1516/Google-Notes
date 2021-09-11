@@ -22,9 +22,10 @@ const useStyles = makeStyles((theme) => ({
         top: '40px',
         width: '600px'
     },
+    
     title: {
         fontWeight: "500",
-        marginBottom: "10px"
+        marginBottom: "10px"    
     },
     menuBtn: {
         textTransform: "unset !important"   
@@ -39,6 +40,10 @@ const useStyles = makeStyles((theme) => ({
     closeBtn: {
         position: 'absolute',
         left: '500px'
+    },
+    listsPopup: {
+        position: "absolute",
+        bottom: '40px'
     }
 }))
 

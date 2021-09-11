@@ -1,4 +1,5 @@
 import axios from "axios"
+import { v4 as uuidv4 } from 'uuid'
 
 export const getNotes = () => {
     return (dispatch) => {
@@ -14,13 +15,13 @@ export const getNotes = () => {
 export const createNote = (inputTitleValue, inputTextValue) => {
     return (dispatch) => {
         axios.post('http://localhost:3001/notes', {
-            labelID: 1,
-            id: 13223,
+            labelID: false,
+            id: uuidv4(),
             title: inputTitleValue,
             text: inputTextValue,
             color: 1,
             pin: false,
-            archive: false
+            archive: true
         }).then((resp) => {
             dispatch({
                 type: 'createNote',
@@ -157,7 +158,7 @@ export const selectLabel = (labelID, id, inputTitleValue, inputTextValue, color,
 export const createLabel = (inputValue) => {
     return (dispatch) => {
         axios.post('http://localhost:3001/labels', {
-            id: 3,
+            id: uuidv4(),
             title: inputValue
         }).then((resp) => {
             dispatch({

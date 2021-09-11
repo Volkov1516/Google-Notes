@@ -10,3 +10,19 @@
     -webkit-box-orient: vertical;
     overflow-y: hidden;
 }
+
+.boxOpenned {
+    height: 420px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.boxOpenned::-webkit-scrollbar {
+    width: 7px;
+    background-color: transparent;
+}
+
+.boxOpenned::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: lightgray;
+}
