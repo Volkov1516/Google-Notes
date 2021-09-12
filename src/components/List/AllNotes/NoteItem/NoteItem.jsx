@@ -37,7 +37,6 @@ const NoteItem = ({ labelID, id, title, text, color, pin, archive, labels, color
     }, [colors, color])
 
 
-
     return (
         <Container >
             {!enableEdit ? (
@@ -100,7 +99,7 @@ const NoteItem = ({ labelID, id, title, text, color, pin, archive, labels, color
                                     </IconButton>
                                 </Tooltip>
                                 <Tooltip title="Archive" placement="bottom">
-                                    <IconButton onClick={() => { archiveNote(labelID, id, inputTitleValue, inputTextValue, color, pin, archive) }}>
+                                    <IconButton onClick={() => archiveNote(labelID, id, inputTitleValue, inputTextValue, color, pin, archive) }>
                                         <ArchiveOutlinedIcon fontSize="small" />
                                     </IconButton>
                                 </Tooltip>

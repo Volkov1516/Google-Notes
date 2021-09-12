@@ -23,7 +23,7 @@ const List = () => {
                         <AllNotes />
                     </Route>
                     {labels.map(i => <Route path={`/label/${i.id}`} style={{ textDecoration: 'none' }}>
-                        <Label id={i.id} />
+                        <Label currentLblId={i.id} />
                     </Route>
                     )}
                     <Route path='/editLabels'>

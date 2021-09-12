@@ -41,18 +41,6 @@ export const updateNote = (labelID, id, inputTitleValue, inputTextValue, color, 
             color,
             pin,
             archive
-        }).then((resp) => {
-            dispatch({
-                type: 'updateNote',
-                payload: resp.data
-            })
-        }).then((resp) => {
-            axios.get('http://localhost:3001/notes').then((resp) => {
-                dispatch({
-                    type: 'getNotes',
-                    payload: resp.data
-                })
-            })
         })
     }
 }
