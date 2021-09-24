@@ -6,7 +6,7 @@
     },
     {
       "id": "e66a77cb-34e4-4ee8-8e77-a1a0512acd72",
-      "title": "Secondary"
+      "title": "Not important:)"
     }
   ],
   "notes": [
@@ -30,10 +30,10 @@
     },
     {
       "labelID": "e29a9628-7a62-46e4-84d5-dcc7628427d6",
-      "id": "13305472-84ad-4936-ba86-7d4c189fbc3b",
-      "title": "",
-      "text": "asdasdd12asdasd",
-      "color": 11,
+      "id": "7b9ab5ac-59e4-44ed-9897-17083d86b404",
+      "title": "Something very important",
+      "text": "Text for this important thing...",
+      "color": 9,
       "pin": false,
       "archive": true
     }

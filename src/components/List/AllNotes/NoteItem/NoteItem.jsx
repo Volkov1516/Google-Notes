@@ -43,7 +43,7 @@ const NoteItem = ({ labelID, id, title, text, color, pin, archive, labels, color
                 <Paper onClick={() => setEnableEdit(!enableEdit)} className={classes.paperClosed} elevation="0" style={{ backgroundColor: noteColor }}>
                     <Typography noWrap className={classes.title} >{title}</Typography>
                     <div className='boxClosed'>
-                        <Typography >{text}</Typography>
+                        <Typography  >{text}</Typography>
                         {/* <InputBase value={text} fullWidth multiline /> */}
                     </div>
                 </Paper>
