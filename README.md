@@ -1,18 +1,30 @@
-# KEEP
+# NOTES
 
 ## Description
-Google like note application.
+A copy of the Google Keep application.
 
-## Features 
-- React Hooks
-- Global state with Redux
-- HTTP requests with axios and JSON server
-- Routing with React Router
-- Search with Fuse.js
+## Features
+- Create, update and delete notes
+- Archive
+- Labels
+- Color notes
+- Layouts (list and table)
+- Search
+
+## Technologies
+- HTML/CSS
+- JavaScipt
+- React (hooks)
+- Redux
 - Material UI
+- Fuse.js
+- react-router
+- axios
+- uuid
+- json-server
 
 ## Installing
 - Copy the repository
-- Install dependencies by npm install
-- Run the JSON server
-- Run the project
+- Install dependencies `npm install`
+- Run the JSON server `json-server --watch ./src/db.json --port 3001`
+- Run the project `npm start`
